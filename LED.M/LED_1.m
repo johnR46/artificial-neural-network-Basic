@@ -12,6 +12,10 @@ int8 instance[10][7];     %/* Original 10 instances */
 int8 n;n=0;
 
 
+
+
+
+
 function void = main(argc, argv)
 int8 argc;
  char *argv[];
@@ -43,10 +47,12 @@ function void = createworld()
      %prepare to save result in file
     fid = fopen('resultLED.txt','w');
 
-   int select_noisy_indexes(), noisy_index();
-   int count,selected;
-   int noisy_instance[7];
-   float actual;    
+   int8    select_noisy_indexes();
+   int8 noisy_index();
+   int8 count;
+   int8 selected;
+   int8 noisy_instance[7];
+   double actual;    
    srandom(seed); 
    
    instance=[ 1,1,1,0,1,1,1 ; 0,0,1,0,0,1,0 
@@ -54,15 +60,15 @@ function void = createworld()
               0,1,1,1,0,1,0 ; 1,1,0,1,0,1,1 
               1,1,0,1,1,1,1 ; 1,0,1,0,0,1,0
               1,1,1,1,1,1,1 ; 1,1,1,1,0,1,1 ]
-       
+      
     fid = fopen(outputfile,"w");
      for count = 0:numtrain 
          select_noisy_indexes();
            selected = rem(random(),10);
-            for i = 0:7
-                 noisy_instance(i) = instance(selected),(i);
-                  if (noisy(i))
-                  noisy_instance(i) = ~noisy_instance(i);
+            for y = 0:7
+                 noisy_instance(y) = instance(selected),(y);
+                  if (noisy(y))
+                  noisy_instance(y) = ~noisy_instance(y);
                   end
             end
             
@@ -73,15 +79,15 @@ function void = createworld()
      printf("Percent Noise: Requested %d, Actual %f\n",percentnoise,actual);
       fclose(fid);
 end
-function int = select_noisy_indexes()
+function int  = select_noisy_indexes()
 
    int8 i;
-   float actual;
+   double actual;
 
-   for i = 0:7
-         noisy(i) = 0;
+   for y = 0:7
+         noisy(y) = 0;
          if( ( 1 + (rem(random(),100))) <= percentnoise) 
-          noisy(i) = 1;
+          noisy(y) = 1;
            n = n+1;
          end
          
