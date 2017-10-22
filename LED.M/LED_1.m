@@ -36,7 +36,7 @@ int8 argc;
       numtrain = str2num(argv(1));
       seed = str2num(argv(2));
       strcpy(outputfile,argv(3));
-      percentnoise = atoi(argv(4));
+      percentnoise = str2num(argv(4));
       createworld();
       
  end

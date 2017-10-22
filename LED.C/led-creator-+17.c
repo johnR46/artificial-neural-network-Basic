@@ -160,6 +160,7 @@ createworld()
                    noisy_instance[4],
                    noisy_instance[5],
                    noisy_instance[6]);
+      
       for(i=0; i<num_irrelevant_attributes; i++)
        fprintf(fout,",%d",(random() % 2));
       fprintf(fout,",%d\n",selected);
