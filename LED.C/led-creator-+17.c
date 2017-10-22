@@ -9,7 +9,8 @@
 
 #include <stdio.h>
 #include <strings.h>
-
+#define random rand
+#define srandom srand
 #define NUMBER_ARGS 5
 
 /*==== Inputs ====*/

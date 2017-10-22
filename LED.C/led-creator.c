@@ -6,11 +6,13 @@
    Pretty lousy code!  Sorry.
    Programming language: C
    ====================================================================== */
-
+// 
 #include <stdio.h>
 #include <strings.h>
+#define random rand
+#define srandom srand
 
-#define NUMBER_ARGS 5
+#define NUMBER_ARGS 10
 
 /*==== Inputs ====*/
 int numtrain;           /*==== Input #1 ====*/
