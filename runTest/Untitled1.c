@@ -13,7 +13,7 @@ void main(){
    instance[0][4] = 1;
    instance[0][5] = 1;
    instance[0][6] = 1;
-   a[0][0]= ;
+ 
    
    instance[1][0] = 0;
    instance[1][1] = 0;
@@ -89,7 +89,7 @@ void main(){
    
     for(i=1;i<10;i++){
    	for(j=1;j<7;j++){
-   		printf("%d",instance[i][j]);
+   		printf("%d,",instance[i][j]);
 	   }
 	   printf("\n");
    }
